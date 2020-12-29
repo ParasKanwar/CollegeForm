@@ -22,6 +22,7 @@ export default (props: React.PropsWithChildren<ComponentProps>) => {
           type="image/png"
           sizes="256x256"
         />
+        <link rel="apple-touch-icon" href="/icon-192x192.png"></link>
         <meta name="theme-color" content="#317EFB" />
         <title>{props.title}</title>
       </Head>
