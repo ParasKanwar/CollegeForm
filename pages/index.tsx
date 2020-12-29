@@ -1,18 +1,18 @@
 import Base from "../components/base/layout";
 import { useContext, useState } from "react";
 import Theme from "../context/theme/theme";
+import Login from "../components/login";
 export default function Home() {
   const context = useContext(Theme);
-  const [isDark, setDark] = useState(false);
   return (
-    <Base themeColor={isDark ? "#013243" : "#19b5fe"} title="Home">
-      <button onClick={context.toggle_mode}>Hello World</button>
+    <Base themeColor={context.dark_mode ? "#013243" : "#19b5fe"} title="Home">
+      <Login></Login>
       <button
         onClick={() => {
-          setDark(!isDark);
+          context.toggle_mode();
         }}
       >
-        {isDark ? "Light" : "Dark"}
+        DarkMode
       </button>
     </Base>
   );
