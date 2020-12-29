@@ -3,6 +3,7 @@ import Head from "next/head";
 
 interface ComponentProps {
   title: string;
+  themeColor: string;
 }
 
 export default (props: React.PropsWithChildren<ComponentProps>) => {
@@ -23,7 +24,7 @@ export default (props: React.PropsWithChildren<ComponentProps>) => {
           sizes="256x256"
         />
         <link rel="apple-touch-icon" href="/icon-192x192.png"></link>
-        <meta name="theme-color" content="#317EFB" />
+        <meta name="theme-color" content={props.themeColor} />
         <title>{props.title}</title>
       </Head>
       <main>{props.children}</main>
