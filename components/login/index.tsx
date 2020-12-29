@@ -1,18 +1,15 @@
-import dynamic from "next/dynamic";
-import { motion } from "framer-motion";
-import React, { useContext } from "react";
-import Theme from "../../context/theme/theme";
+import React, { useState } from "react";
 import BaseContainer from "./baseContainer";
+import ButtonGroup from "./components/buttonGroup";
+import InputGroup from "./components/inputGroup";
+import { inputHandlers } from "./handlers/input";
+import { buttonHandlers } from "./handlers/button";
 export default () => {
-  const context = useContext(Theme);
   return (
-    <motion.div drag dragConstraints={{ bottom: 0, left: 0, right: 0, top: 0 }}>
-      <BaseContainer>
-        <input></input>
-        <input></input>
-        <button>Sign_In</button>
-        <button>Sign_Up</button>
-      </BaseContainer>
-    </motion.div>
+    <BaseContainer>
+      <img style={{ width: 100, height: 100 }} src="/icon-384x384.png"></img>
+      <InputGroup inputs={inputHandlers}></InputGroup>
+      <ButtonGroup buttons={buttonHandlers}></ButtonGroup>
+    </BaseContainer>
   );
 };

@@ -6,7 +6,7 @@ export default (props: PropsWithChildren<{}>) => {
   return (
     <div
       style={{
-        background: context.dark_mode ? "#121212" : "rgba(255,255,255,1)",
+        background: context.dark_mode ? "#212121" : "rgba(255,255,255,1)",
       }}
       className={styles.baseContainer}
     >
