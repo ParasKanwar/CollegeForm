@@ -1,7 +1,13 @@
-import { input } from "../interfaces/input";
+import { input } from "../../interfaces/input";
 export default ({ inputs }: { inputs: input[] }) => {
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
       {inputs.map(({ placeholder, onChange, value, type, name }) => {
         return (
           <input

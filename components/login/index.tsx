@@ -1,41 +1,40 @@
 import React, { useReducer } from "react";
 import BaseContainer from "./baseContainer";
-import Overlay from "../overlay/index";
-import ButtonGroup from "./components/buttonGroup";
-import InputGroup from "./components/inputGroup";
-import Progress from "../progress/index";
+import ButtonGroup from "./components/ButtonRelated/buttonGroup";
+import MyReducer from "./reducer/index";
+import InputGroup from "./components/InputRelated/inputGroup";
 import { Button } from "./interfaces/button";
 import { input } from "./interfaces/input";
+import Loading from "./components/loading";
+import Logo from "./components/Logo";
 const actions = { email: "Email", password: "Password" };
 export default () => {
-  const [state, dispatch] = useReducer(MyReducer, { email: "", password: "" });
+  const [state, dispatch] = useReducer(MyReducer, {
+    email: "",
+    password: "",
+    initial: true,
+    loading: false,
+  });
   return (
     <>
-      <Overlay visible={state.password === "paras"}>
-        <img
-          style={{ width: 100, height: 100, marginBottom: 20 }}
-          src="/icon-384x384.png"
-        ></img>
-        <Progress></Progress>
-      </Overlay>
+      {!state.initial ? (
+        <Loading
+          onClose={() => {
+            dispatch({ type: "reset" });
+          }}
+          visible={state.loading}
+        ></Loading>
+      ) : (
+        ""
+      )}
       <BaseContainer>
-        <img style={{ width: 100, height: 100 }} src="/icon-384x384.png"></img>
+        <Logo></Logo>
         <InputGroup inputs={getInputs(dispatch, state)}></InputGroup>
-        <ButtonGroup buttons={getButtons()}></ButtonGroup>
+        <ButtonGroup buttons={getButtons(dispatch)}></ButtonGroup>
       </BaseContainer>
     </>
   );
 };
-function MyReducer(state, action) {
-  switch (action.type) {
-    case "Email":
-      return { ...state, email: action.email };
-    case "Password":
-      return { ...state, password: action.password };
-    default:
-      return state;
-  }
-}
 
 function getInputs(
   dispatch: (any) => void,
@@ -64,16 +63,16 @@ function getInputs(
   return [emailProps, passwordProps];
 }
 
-function getButtons(): Button[] {
+function getButtons(dispatch): Button[] {
   const loginButtonProps: Button = {
     onClick: () => {
-      console.log("Hello Sign In Has Been Clicked");
+      return dispatch({ type: "login" });
     },
     text: "SignIn",
   };
   const signUpButtonProps: Button = {
     onClick() {
-      console.log("Sign Up Has Been Clicked");
+      return dispatch({ type: "signup" });
     },
     text: "SignUp",
   };

@@ -1,0 +1,28 @@
+.LoginScreenButton {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: 250px;
+  height: 50px;
+  font-family: poppins;
+  font-weight: bold;
+  margin: 10px;
+  border-radius: 10px;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 0.25s;
+}
+.LoginScreenButton:hover {
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+.LoginScreenButton:active {
+  transform: scale(0.9) translateY(-3px);
+}
+.LoginScreenButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

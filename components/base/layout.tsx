@@ -24,6 +24,10 @@ export default (props: React.PropsWithChildren<ComponentProps>) => {
           sizes="256x256"
         />
         <link rel="apple-touch-icon" href="/icon-192x192.png"></link>
+        <link
+          href={`https://fonts.googleapis.com/css2?family=Poppins&display=swap`}
+          rel="stylesheet"
+        ></link>
         <meta name="theme-color" content={props.themeColor} />
         <title>{props.title}</title>
       </Head>

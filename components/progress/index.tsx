@@ -7,7 +7,7 @@ export default () => {
         cy="50"
         r="40"
         stroke="white"
-        stroke-width="3"
+        strokeWidth="3"
         strokeDasharray="142"
       />
     </svg>
