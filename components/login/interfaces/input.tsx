@@ -3,4 +3,5 @@ export interface input {
   type?: string;
   value?: string;
   placeholder?: string;
+  name?: string;
 }

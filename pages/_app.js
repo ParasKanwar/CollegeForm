@@ -1,6 +1,7 @@
 import ThemeContext from "../context/theme/theme";
 import ThemeReducer, { TOGGLE } from "../context/theme/reducer";
-import React, { useContext, useReducer, useState } from "react";
+import React, { useReducer } from "react";
+import "../globals/golbal.css";
 function MyApp({ Component, pageProps }) {
   const [theme, dispatch] = useReducer(ThemeReducer, { dark_mode: false });
   const toggle_mode = () => {
