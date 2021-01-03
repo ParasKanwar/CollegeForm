@@ -5,7 +5,10 @@ import Login from "../components/login";
 export default function Home() {
   const context = useContext(Theme);
   return (
-    <Base themeColor={context.dark_mode ? "#013243" : "#19b5fe"} title="Home">
+    <Base
+      themeColor={context.dark_mode ? "rgba(0,0,0,1)" : "rgba(255,255,255,1)"}
+      title="Home"
+    >
       <Login></Login>
       <button
         onClick={() => {
