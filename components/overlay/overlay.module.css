@@ -1,5 +1,5 @@
 .overlay {
-  position: fixed;
+  position: absolute;
   width: 100vw;
   height: 100vh;
   z-index: 2;
@@ -15,7 +15,7 @@
 }
 .noOverlay {
   /*Copied Code From Above Cause I don't know how to extends classes*/
-  position: fixed;
+  position: absolute;
   width: 100vw;
   height: 100vh;
   z-index: 2;

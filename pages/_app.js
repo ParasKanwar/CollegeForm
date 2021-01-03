@@ -15,6 +15,14 @@ function MyApp({ Component, pageProps }) {
       }}
     >
       <Component {...pageProps} />
+      <style global jsx>
+        {`
+          body {
+            transition: 0.25s background;
+            background: ${theme.dark_mode ? "black" : "white"};
+          }
+        `}
+      </style>
     </ThemeContext.Provider>
   );
 }
