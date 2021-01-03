@@ -1,0 +1,10 @@
+.LoginInput {
+  padding: 10px;
+  background-color: transparent;
+  outline: none;
+  border-radius: 10px;
+  width: 250px;
+  height: 30px;
+  margin: 10px;
+  font-family: poppins;
+}

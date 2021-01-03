@@ -1,4 +1,5 @@
 import { input } from "../../interfaces/input";
+import Input from "./input";
 export default ({ inputs }: { inputs: input[] }) => {
   return (
     <div
@@ -10,16 +11,16 @@ export default ({ inputs }: { inputs: input[] }) => {
     >
       {inputs.map(({ placeholder, onChange, value, type, name }) => {
         return (
-          <input
+          <Input
             key={name}
             placeholder={placeholder}
             value={value}
             type={type || "text"}
             name={name}
             onChange={(e) => {
-              onChange(e.target.value);
+              onChange(e);
             }}
-          ></input>
+          ></Input>
         );
       })}
     </div>
